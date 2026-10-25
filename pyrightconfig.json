@@ -1,0 +1,13 @@
+{
+  "venvPath": "/home/ubuntu/ringwatch",
+  "venv": ".venv",
+  "extraPaths": ["/home/ubuntu/ringwatch/.venv/lib/python3.12/site-packages"],
+  "include": ["*.py", "tests/**/*.py"],
+  "exclude": [".venv/**", "**/__pycache__/**", ".pytest_cache/**", "static/libs/**"],
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "extraPaths": [".", "/home/ubuntu/ringwatch/.venv/lib/python3.12/site-packages"]
+    }
+  ]
+}

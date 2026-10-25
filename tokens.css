@@ -1,0 +1,91 @@
+:root {
+  /* Surfaces */
+  --bg: #0B1220;
+  --surface: #111A2E;
+  --surface-2: #16223A;
+  --border: #1F2A44;
+  --border-strong: #2B3A5C;
+
+  /* Text */
+  --text: #E6EDF7;
+  --text-muted: #8FA1BF;
+
+  /* Brand */
+  --accent: #22D3EE;
+  --accent-soft: rgba(34, 211, 238, 0.12);
+  --on-accent: #06222B;
+
+  /* Risk: shapes */
+  --risk-low: #22C55E;
+  --risk-med: #F59E0B;
+  --risk-high: #EF4444;
+  --risk-ring: #FF3B5C;
+
+  /* Risk: badge text and backgrounds */
+  --risk-low-text: #86EFAC;
+  --risk-low-bg: rgba(34, 197, 94, 0.14);
+  --risk-med-text: #FCD34D;
+  --risk-med-bg: rgba(245, 158, 11, 0.14);
+  --risk-high-text: #FCA5A5;
+  --risk-high-bg: rgba(239, 68, 68, 0.14);
+
+  /* Typography */
+  --font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Spacing: 4px grid */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+
+  /* Depth */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.25);
+  --glow-accent: 0 0 0 1px rgba(34, 211, 238, 0.35), 0 0 24px rgba(34, 211, 238, 0.18);
+  --glow-ring: 0 0 16px rgba(255, 59, 92, 0.55);
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --t-fast: 120ms;
+  --t-med: 200ms;
+  --t-slow: 450ms;
+}
+
+html { color-scheme: dark; font-size: 16px; }
+html.present { font-size: 18px; }
+body {
+  margin: 0;
+  font: 400 0.9375rem/1.6 var(--font-ui);
+  color: var(--text);
+  background: radial-gradient(1100px 520px at 8% -10%, rgba(34, 211, 238, 0.10), transparent 60%), var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+.mono, .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+  transition: border-color var(--t-med) var(--ease);
+}
+.card:hover { border-color: var(--border-strong); }
+.glass {
+  background: rgba(17, 26, 46, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
